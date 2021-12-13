@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using TesteNewcon.Data;
 
 namespace TesteNewcon
 {
@@ -28,7 +30,17 @@ namespace TesteNewcon
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+           services.AddControllers().AddJsonOptions(x =>
+
+           
+            {
+               x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+
+               x.JsonSerializerOptions.IgnoreNullValues = true;
+
+            });
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TesteNewcon", Version = "v1" });
@@ -37,6 +49,8 @@ namespace TesteNewcon
             services.AddDbContext<DataContext>(
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
+
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

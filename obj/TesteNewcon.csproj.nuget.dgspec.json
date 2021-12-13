@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj": {}
+    "C:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj": {
+    "C:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj",
+        "projectUniqueName": "C:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj",
         "projectName": "TesteNewcon",
-        "projectPath": "c:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj",
+        "projectPath": "C:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\TesteNewcon.csproj",
         "packagesPath": "C:\\Users\\Laris\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\obj\\",
+        "outputPath": "C:\\Users\\Laris\\OneDrive\\Área de Trabalho\\TesteNewcon\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Laris\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,7 +38,19 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.0, )"
             },

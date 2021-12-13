@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using TesteNewcon.Models;
 
-namespace TesteNewcon.DataContext
+namespace TesteNewcon.Data
 {
+        
     public class DataContext : DbContext
     {
 
@@ -16,3 +17,4 @@ namespace TesteNewcon.DataContext
         
     }
 }
+    
