@@ -9,7 +9,8 @@ namespace TesteNewcon.Models
     {
         public int Id{get; set;}
         public string Descricao{get; set;}
-        public Endereco Endereco{get; set;}
+
+        public virtual Endereco Endereco{get; set;}
         public DateTime Datacriacao{get; set;}
 
         

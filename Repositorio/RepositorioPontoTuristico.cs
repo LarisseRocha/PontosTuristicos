@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TesteNewcon.Interfaces;
@@ -22,10 +24,16 @@ namespace TesteNewcon.Data.Repositorio{
                 return model;
             }
 
-            public async Task<ICollection<PontoTuristico>> GetTodosOsPontosAsync()
+        public async Task<IQueryable<PontoTuristico>> GetTodosOsPontosAsync()
             {
                 var listaPontosTur = await _dataContext.PontoTuristico.ToListAsync();
-                return listaPontosTur;
+
+                IQueryable<PontoTuristico> query = _dataContext.PontoTuristico;
+
+                query = query.AsNoTracking().OrderByDescending(p => p.Datacriacao);                
+
+                return query;
+
             }
     }
 }

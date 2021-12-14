@@ -9,8 +9,8 @@ using TesteNewcon.Data;
 namespace TesteNewcon.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211214010128_criarMigrs")]
-    partial class criarMigrs
+    [Migration("20211214021120_criarMigrations")]
+    partial class criarMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,15 @@ namespace TesteNewcon.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Bairro")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Rua")
                         .HasColumnType("TEXT");

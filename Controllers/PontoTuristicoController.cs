@@ -27,7 +27,10 @@ namespace TesteNewcon.Controllers
              var pontoTuristico = new PontoTuristico();
              pontoTuristico.Descricao = model.Descricao;
              pontoTuristico.Endereco = model.Endereco;
-             pontoTuristico.Datacriacao = DateTime.Now;
+             /*pontoTuristico.Endereco.Bairro = model.Endereco.Bairro;
+             pontoTuristico.Endereco.Cidade = model.Endereco.Cidade;
+             pontoTuristico.Endereco.Estado = model.Endereco.Estado;
+             pontoTuristico.Datacriacao = DateTime.Now;*/
              await _repositorioPontoTuristico.AddPontoTuristicoAsync(pontoTuristico);
              return Ok(pontoTuristico);
              
