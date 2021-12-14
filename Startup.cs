@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using TesteNewcon.Data;
+using TesteNewcon.Data.Repositorio;
+using TesteNewcon.Interfaces;
 
 namespace TesteNewcon
 {
@@ -40,15 +42,16 @@ namespace TesteNewcon
 
             });
 
+            services.AddScoped<IPontoTuristico, RepositorioPontoTuristico>();
+            
+            services.AddDbContext<DataContext>(
+                context => context.UseSqlite(Configuration.GetConnectionString("Default"))
+            );
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TesteNewcon", Version = "v1" });
             });
-            
-            services.AddDbContext<DataContext>(
-                context => context.UseSqlite(Configuration.GetConnectionString("Default"))
-            );
 
           
         }

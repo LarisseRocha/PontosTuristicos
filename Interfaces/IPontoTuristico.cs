@@ -6,7 +6,7 @@ namespace TesteNewcon.Interfaces
 {
     public interface IPontoTuristico
     {
-         Task <PontoTuristico> AddPontoTuristicoAsync();
+         Task <PontoTuristico> AddPontoTuristicoAsync(PontoTuristico model);
          Task <ICollection<PontoTuristico>> GetTodosOsPontosAsync();
          
          
