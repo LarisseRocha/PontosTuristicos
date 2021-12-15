@@ -22,7 +22,7 @@ namespace TesteNewcon.Controllers
          [HttpPost]
          [Route("Cadastrar")]
 
-         public async Task<ActionResult> CadastrarPontoTuristico([FromForm] PontoTuristico model){
+         public async Task<ActionResult> CadastrarPontoTuristico(PontoTuristico model){
 
              var pontoTuristico = new PontoTuristico();
              pontoTuristico.Descricao = model.Descricao;

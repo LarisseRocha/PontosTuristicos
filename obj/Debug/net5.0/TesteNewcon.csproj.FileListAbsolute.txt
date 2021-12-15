@@ -53,6 +53,3 @@ C:\Users\Laris\OneDrive\Área de Trabalho\TesteNewcon\obj\Debug\net5.0\TesteNewc
 C:\Users\Laris\OneDrive\Área de Trabalho\TesteNewcon\obj\Debug\net5.0\ref\TesteNewcon.dll
 C:\Users\Laris\OneDrive\Área de Trabalho\TesteNewcon\obj\Debug\net5.0\TesteNewcon.pdb
 C:\Users\Laris\OneDrive\Área de Trabalho\TesteNewcon\obj\Debug\net5.0\TesteNewcon.genruntimeconfig.cache
-C:\Users\Laris\OneDrive\Área de Trabalho\TesteNewcon\bin\Debug\net5.0\FrontEnd\testenewcon\package-lock.json
-C:\Users\Laris\OneDrive\Área de Trabalho\TesteNewcon\bin\Debug\net5.0\FrontEnd\testenewcon\package.json
-C:\Users\Laris\OneDrive\Área de Trabalho\TesteNewcon\bin\Debug\net5.0\FrontEnd\testenewcon\public\manifest.json
