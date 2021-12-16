@@ -1,7 +1,7 @@
 # PontosTuristicos
 Sistema para cadastro e listagem de pontos turísticos do Brasil.
 
-Passo a Passo para execução:<br
+Passo a Passo para execução: <br>
 <p>dotnet tool install --global dotnet-ef<p>
 <p>dotnet restore</p>
 <p>dotnet ef migrations add InitialCreate</p>
