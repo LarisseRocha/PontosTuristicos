@@ -8,8 +8,9 @@ namespace TesteNewcon.Models
     public class PontoTuristico
     {
         public int Id{get; set;}
-        public string Descricao{get; set;}
 
+        [StringLength(100, ErrorMessage = "A descricao nao pode ter mais de 100 caracteres.")]
+        public string Descricao{get; set;}
         public virtual Endereco Endereco{get; set;}
         public DateTime Datacriacao{get; set;}
 
