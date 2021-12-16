@@ -24,16 +24,33 @@ namespace TesteNewcon.Data.Repositorio{
                 return model;
             }
 
+
         public async Task<IQueryable<PontoTuristico>> GetTodosOsPontosAsync()
             {
                 var listaPontosTur = await _dataContext.PontoTuristico.ToListAsync();
 
                 IQueryable<PontoTuristico> query = _dataContext.PontoTuristico;
 
-                query = query.AsNoTracking().OrderByDescending(p => p.Datacriacao);                
+                query = query.AsNoTracking().OrderByDescending(p => p.Datacriacao).Include(pc => pc.Endereco);;                
 
                 return query;
 
             }
+
+       
+
+        public async Task<IList<PontoTuristico>> GetPontoTuristicoPagAsync(int skip, int take)
+        {
+             IQueryable<PontoTuristico> query = _dataContext.PontoTuristico;
+               
+            query = query.AsNoTracking()
+            .OrderByDescending(p => p.Datacriacao)
+            .Skip(skip)
+            .Take(take);          
+
+            return await query.ToListAsync();
+        }
+
+        
     }
 }

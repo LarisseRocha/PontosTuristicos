@@ -24,15 +24,9 @@ namespace TesteNewcon.Controllers
 
          public async Task<ActionResult> CadastrarPontoTuristico(PontoTuristico model){
 
-             var pontoTuristico = new PontoTuristico();
-             pontoTuristico.Descricao = model.Descricao;
-             pontoTuristico.Endereco = model.Endereco;
-             /*pontoTuristico.Endereco.Bairro = model.Endereco.Bairro;
-             pontoTuristico.Endereco.Cidade = model.Endereco.Cidade;
-             pontoTuristico.Endereco.Estado = model.Endereco.Estado;
-             pontoTuristico.Datacriacao = DateTime.Now;*/
-             await _repositorioPontoTuristico.AddPontoTuristicoAsync(pontoTuristico);
-             return Ok(pontoTuristico);
+             model.Datacriacao = DateTime.Now;
+             await _repositorioPontoTuristico.AddPontoTuristicoAsync(model);
+             return Ok(model);
              
          }
 
@@ -48,6 +42,25 @@ namespace TesteNewcon.Controllers
                          "Falha ao obter os pontos turísticos! Erro:{execao.message}");                          
              }
              
+         }
+
+         [HttpGet]
+         [Route("paginacao")]
+         public async Task<ActionResult<IEnumerable<PontoTuristico>>>GetPontoTuristicoPag( int skip =0, int take =5){
+
+             try
+            {
+                var PontoTuristicoRepositorio = await _repositorioPontoTuristico.GetPontoTuristicoPagAsync(skip, take);
+                if (PontoTuristicoRepositorio == null) return NoContent();
+                
+                return Ok(PontoTuristicoRepositorio);
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Falha ao tentar obter so produtos. Erro: {ex.Message}");
+            }
+            
          }
     }
 }
